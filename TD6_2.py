@@ -16,8 +16,7 @@ def interval_pre(B0,B1,alpha,n,x,y) :
     T=t[np.where(T>0.975)[0][0]]
     Ex=np.mean(x)
     D=(Ex-x)**2
-    print(T)
-    print(D)
+
     y2 = B0 + B1 * x + T*V*sqrt(1 + 1/n + D[2]/((n-1)*Vx))
     y3 = B0 + B1 * x - T * V * sqrt(1 + 1 / n + D[2] / ((n - 1) * Vx))
     plt.plot(x,y1)
@@ -46,6 +45,7 @@ def myRegLin( X,Y ):
     R= Cov_xy**2/(Var_x*Var_y)
     Yr=B1*X+B0
     p=sqrt(R)
+    print("correlation et les moyennes \n ")
     print(p)
     print(np.mean(X),np.mean(Yr))
     plt.plot(X,Y,'o')
